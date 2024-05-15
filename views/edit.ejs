@@ -1,0 +1,40 @@
+<h2>Update Game Details</h2>
+
+<form action="/games/<%= game.id %>?_method=put" method="post">
+  <label for="">title</label>
+  <input type="text" name="title" value="<%= game.title %>">
+
+  <label for="">image url</label>
+  <input type="text" name="image_url" value="<%= game.image_url %>">
+
+  <label for="">description</label>
+  <input type="text" name="description" value="<%= game.description %>">
+
+  <label for="">genre</label>
+  <input type="text" name="genre" value="<%= game.genre %>">
+
+  <label for="">platform</label>
+  <input type="text" name="platform" value="<%= game.platform %>">
+
+  <label for="">releaseDate</label>
+  <input type="text" name="releaseDate" value="<%= game.releaseDate %>">
+
+  <button>update</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>

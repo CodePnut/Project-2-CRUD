@@ -41,14 +41,15 @@ CREATE TABLE user_games (
 --   FOREIGN KEY (game_id) REFERENCES GAMES (id) ON DELETE CASCADE
 -- );
 
--- CREATE TABLE comments (
---   id SERIAL PRIMARY KEY,
---   content TEXT,
---   user_id INTEGER NOT NULL,
---   game_id INTEGER NOT NULL,
---   FOREIGN KEY (user_id) REFERENCES Users (id) ON DELETE CASCADE,
---   FOREIGN KEY (game_id) REFERENCES GAMES (id) ON DELETE CASCADE
--- );
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  content TEXT,
+  score INTEGER,
+  user_id INTEGER NOT NULL,
+  game_id INTEGER NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES Users (id) ON DELETE CASCADE,
+  FOREIGN KEY (game_id) REFERENCES GAMES (id) ON DELETE CASCADE
+);
 
 -- comments add score (integer)
 
@@ -64,3 +65,6 @@ VALUES ('Cyberpunk 2077', 'https://i1.sndcdn.com/artworks-kb2KdSqUgEytRcfh-VkRYy
 
 INSERT INTO user_games (user_id, game_id)
 VALUES (1, 1);
+
+INSERT INTO comments (content, score, user_id, game_id)
+VALUES ('This game is amazing!', 10, 1, 1);

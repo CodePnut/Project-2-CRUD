@@ -1,1 +1,23 @@
-<h2>homepage</h2>
+<h2>Homepage</h2>
+
+<div. class="all-games">
+  <% for (let game of games) { %>
+
+    <div class="ui-card">
+      <img src="<%= game.image_url %>" alt="">
+
+      <section class="content">
+        <h2>
+          <a href="/games/<%= game.id %>">
+            <%= game.title %>
+            
+          </a>
+        </h2>
+      </section>  
+      <footer class="content">
+        <span>🕙 2 minutes</span>
+        <span>sydney</span>
+      </footer>
+    </div>
+
+  <% } %>

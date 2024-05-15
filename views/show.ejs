@@ -1,0 +1,18 @@
+<h2>Game Details</h2>
+
+<h2><%= Game.title %></h2>
+
+<p><%= Game.description %></p>
+
+<a href="/games/<%= game.id %>/edit">edit dish</a>
+
+<form action="/comments" method="post">
+  <label for="">comment</label>
+  <textarea name="content"></textarea>
+  <input type="hidden" name="game_id" value="<%= game.id %>">
+  <button>post</button>
+</form>
+
+<% for (let comment of comments) { %>
+  <p><%= comment.content %></p>
+<% } %>
