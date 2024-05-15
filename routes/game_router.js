@@ -20,12 +20,10 @@ router.get('/games/:id', (req, res) => {
 
     // we are expecting just one record
     const gameObj = result.rows[0]
-
     db.query(commentsSql, [req.params.id], (err, result) => {
       if (err) console.log(err)
 
       const comments = result.rows
-
       // we have the game & the comments
       // now we're ready to send a response back to the client
 
