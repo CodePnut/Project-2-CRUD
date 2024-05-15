@@ -4,7 +4,9 @@
 
 <p><%= game.description %></p>
 
-<a href="/games/<%= game.id %>/edit">edit dish</a>
+
+<a href="/games/<%= game.id %>/edit">edit game</a>
+<img src="<%= game.image_url %>" alt="">
 
 <form action="/comments" method="post">
   <label for="">comment</label>
