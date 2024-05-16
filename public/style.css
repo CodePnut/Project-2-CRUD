@@ -82,3 +82,23 @@ body {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 0 2rem;
+    max-width: 1200px;
+  }
+
+  .all-games {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* 
+@media (min-width: 1600px) {
+  .wrapper {
+    max-width: 1600px;
+  }
+
+  .all-games {
+    grid-template-columns: repeat(4, 1fr);
+  } */

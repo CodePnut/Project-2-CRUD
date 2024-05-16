@@ -17,7 +17,7 @@
   <input type="text" name="platform" value="<%= game.platform %>">
 
   <label for="">releaseDate</label>
-  <input type="text" name="release_date" value="<%= game.release_date %>">
+  <input type="text" name="release_date" value="<%= moment(game.release_date).format('DD/MM/YYYY') %>">
 
   <button>update</button>
 </form>
