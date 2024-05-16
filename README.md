@@ -17,6 +17,7 @@ Tables Used: Users, Games, UserGames, Favourite and Comment Tables.
 - Trello (https://trello.com/invite/b/k7AT3Sws/ATTI7981517c284a49c790dceaabe014247aF7008A2C/crud-project)
 - LucidChart
 - WireframePro
+- Render
 
 # Favourite Function
 - Linking the routers together with the Server.js.
