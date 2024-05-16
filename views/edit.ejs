@@ -1,5 +1,5 @@
 <h2>Update Game Details</h2>
-
+<!-- Must match with the database -->
 <form action="/games/<%= game.id %>?_method=put" method="post">
   <label for="">title</label>
   <input type="text" name="title" value="<%= game.title %>">
@@ -17,24 +17,7 @@
   <input type="text" name="platform" value="<%= game.platform %>">
 
   <label for="">releaseDate</label>
-  <input type="text" name="releaseDate" value="<%= game.releaseDate %>">
+  <input type="text" name="release_date" value="<%= game.release_date %>">
 
   <button>update</button>
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </form>

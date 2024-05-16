@@ -1,0 +1,17 @@
+<h1><a href="/">Game Lab</a></h1>
+<nav>
+  <a href="/">Home</a>
+  <a href="/games">Games</a>
+  <a href="/share">Share Games</a>
+  <a href="/signup">Sign Up</a>
+  <% if (isLoggedIn) { %>
+  <p>logged in as <%= currentUser.email %></p>
+  <a href="/favourites">My Favourites</a>
+  <form action="/logout?_method=delete" method="post">
+    <button>logout</button>
+  </form>
+  <% } else { %>
+
+  <a href="/login">Login</a>
+  <% } %>
+</nav>

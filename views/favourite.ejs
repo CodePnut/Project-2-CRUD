@@ -1,0 +1,21 @@
+<h1>Your Favourite Games</h1>
+<% if (favouriteGames.length > 0) { %>
+  <ul>
+    <% favouriteGames.forEach(game => { %>
+      <li>
+       <section>Game Title: <%= game.title %></section>
+        <img src="<%= game.image_url %>" alt="<%= game.image %>">
+        <section>Description: <%= game.description %></section>
+        <section>Genre: <%= game.genre %></section>
+        <section>Platform: <%= game.platform %></section>
+        <section>Release Date: <%= moment(game.release_date).format('DD/MM/YYYY') %></p></section>
+        <!-- This is to delete your favourite games -->
+        <form action="/favourites/<%= game.id %>?_method=DELETE" method="post">
+          <button>Remove from Favourites</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No games added to favourites yet.</p>
+<% } %>

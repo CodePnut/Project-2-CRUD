@@ -1,0 +1,84 @@
+body {
+  background-image: url(https://preview.redd.it/tf9j019nty361.png?width=779&format=png&auto=webp&s=f893e12eb6ac7098fa56753b17443662dc929541);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+#top h1 {
+  margin: 0.6rem 0;
+}
+
+#top h1 a {
+  color: #404040;
+}
+
+#top nav {
+  font-size: 1.5rem;
+}
+
+#top nav a {
+  margin: 0 0.3rem;
+}
+
+.all-games {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.ui-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 400px;
+  background-color: #d9f0c7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.ui-card a {
+  color: #307317;
+}
+
+.ui-card footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: #404040;
+  color: #d9f0c7;
+}
+
+.ui-card .content {
+  padding: 5px;
+}
+
+
+.ui-card img {
+  width: 85%; 
+  height: auto; 
+  margin: 0 auto; 
+  display: block;
+}
+
+.ui-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

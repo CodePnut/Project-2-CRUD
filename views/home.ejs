@@ -15,8 +15,9 @@
         </h2>
       </section>  
       <footer class="content">
-        <span>🕙 2 minutes</span>
-        <span>sydney</span>
+        <p>Genre: <%= game.genre %></p>
+        <p>Platform: <%= game.platform %></p>
+        <p>Release Date: <%= moment(game.release_date).format('DD/MM/YYYY') %></p>
       </footer>
     </div>
 

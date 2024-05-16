@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/reset.css">
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/games">Games</a>
-    <a href="/games/share">Share Games</a>
-  </nav>
-  <div class="wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header id="top"><%- include('_header') %></header>
 
-    <main>
-      <%- body %>
-    </main>
+      <main><%- body %></main>
 
-    <footer>
-      &copy; 2024
-    </footer>
-  </div> <!-- wrapper -->
-  
-<!-- Ask what is this for? -->
-  <script src="/client.js"></script> 
-  
-</body>
+      <footer>&copy; 2024</footer>
+    </div>
+    <!-- wrapper -->
+
+    <!-- Ask what is this for? -->
+    <script src="/client.js"></script>
+  </body>
 </html>

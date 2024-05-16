@@ -6,6 +6,7 @@
     <img src="<%= game.image_url %>" alt="">
     <p> <%= game.genre %></p>
     <p> <%= game.platform %></p>
+    <!-- npm i moment module -->
     <p> <%= moment(game.release_date).format('DD/MM/YYYY') %></p>
 
 <% } %>

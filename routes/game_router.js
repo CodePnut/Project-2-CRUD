@@ -66,12 +66,12 @@ router.get("/games", (req, res) => {
     }
 
     const games = result.rows; // if there is no error, get the games from the result
-    res.render("allGames", { 
+    res.render("allGames", {
       games: games,
-      moment: require('moment')
-    })
-  })
-})
+      moment: require("moment"),
+    });
+  });
+});
 // ---------------------------------------------------------------------------------------------------------------------------
 router.get("/games/:id", (req, res) => {
   const sql = `
@@ -103,6 +103,26 @@ router.get("/games/:id", (req, res) => {
   });
 });
 // ---------------------------------------------------------------------------------------------------------------------------
+router.get("/games/:id/edit", (req, res) => {
+  const sql = `
+  SELECT * FROM games WHERE id = $1;
+`;
+
+  db.query(sql, [req.params.id], (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+
+    const game = result.rows[0];
+
+    if (!game) {
+      res.status(404).send('Game not found');
+    } else {
+      res.render('edit', { game: game });
+    }
+  });
+});
+// ---------------------------------------------------------------------------------------------------------------------------
 router.get("/share", (req, res) => {
   res.render("share");
 });
@@ -121,7 +141,7 @@ router.delete("/games/:id", (req, res) => {
   });
 });
 // ---------------------------------------------------------------------------------------------------------------------------
-router.put('/games/:id', (req, res) => {
+router.put("/games/:id", (req, res) => {
   const title = req.body.title;
   const imageURL = req.body.image_url;
   const description = req.body.description;
@@ -136,13 +156,21 @@ router.put('/games/:id', (req, res) => {
     WHERE id = $7;
   `;
 
-  db.query(sql, [title, imageURL, description, genre, platform, releaseDate, id], (err, result) => {
-    if (err) {
-      console.log(err);
+  db.query(
+    sql,
+    [title, imageURL, description, genre, platform, releaseDate, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+
+      res.redirect(`/games/${id}`);
     }
-
-    res.redirect(`/games/${id}`);
-  });
+  );
 });
-
+// ---------------------------------------------------------------------------------------------------------------------------
 module.exports = router;
+
+
+// Errors: Cannot update in Edit page
+// Solution: Change the name of the input fields in the edit.ejs file to match the names in the database
