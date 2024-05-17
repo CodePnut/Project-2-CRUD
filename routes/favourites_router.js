@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../db'); // replace with your actual db file path
 
 // Middleware to ensure user is logged in
-const ensureLoggedIn = (req, res, next) => {
+const ensureLoggedin = (req, res, next) => {
   if (req.session.userId) {
     next();
   } else {
@@ -12,7 +12,7 @@ const ensureLoggedIn = (req, res, next) => {
 };
 
 // Route to add a game to favourites
-router.post('/favourites', ensureLoggedIn, (req, res) => {
+router.post('/favourites', ensureLoggedin, (req, res) => {
   const game_id = req.body.game_id;
   const userId = req.session.userId;
 
@@ -31,7 +31,7 @@ router.post('/favourites', ensureLoggedIn, (req, res) => {
 });
 
 // Route to view favourite games
-router.get('/favourites', ensureLoggedIn, (req, res) => {
+router.get('/favourites', ensureLoggedin, (req, res) => {
   const userId = req.session.userId;
 
   const sql = `
@@ -48,7 +48,7 @@ router.get('/favourites', ensureLoggedIn, (req, res) => {
 });
 
 // Route to remove a game from favourites
-router.delete('/favourites/:id', ensureLoggedIn, (req, res) => {
+router.delete('/favourites/:id', ensureLoggedin, (req, res) => {
   const gameId = req.params.id;
   const userId = req.session.userId;
 

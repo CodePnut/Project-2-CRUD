@@ -1,4 +1,4 @@
-function ensureLoggedIn (req, res, next) {
+function ensureLoggedin (req, res, next) {
   if (req.session.userId) {
     next()
   } else {
@@ -6,4 +6,4 @@ function ensureLoggedIn (req, res, next) {
   }
 }
 
-module.exports = ensureLoggedIn
+module.exports = ensureLoggedin

@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../db')
-const ensureLoggedIn = require('../middlewares/ensureLoggedIn')
+const ensureLoggedin = require('../middlewares/ensureLoggedin')
 
 
-router.post('/comments', ensureLoggedIn, (req, res) => {
+router.post('/comments', ensureLoggedin, (req, res) => {
   const content = req.body.content;
   const game_id = req.body.game_id;
   const userId = req.session.userId;
